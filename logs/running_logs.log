@@ -1,0 +1,371 @@
+[2024-11-24 01:00:36,776: INFO: main: Starting]
+[2024-12-01 18:30:23,417: INFO: main: >>>>>>> stage Data Ingestion Stage started]
+[2024-12-01 18:30:23,420: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 18:30:23,421: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 18:30:23,422: INFO: common: created directory at: artifacts]
+[2024-12-01 18:30:23,424: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 18:30:23,580: ERROR: main: <urlopen error [Errno 11001] getaddrinfo failed>]
+Traceback (most recent call last):
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Program Files\Python311\Lib\http\client.py", line 1283, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Program Files\Python311\Lib\http\client.py", line 1329, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Program Files\Python311\Lib\http\client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Program Files\Python311\Lib\http\client.py", line 1038, in _send_output
+    self.send(msg)
+  File "C:\Program Files\Python311\Lib\http\client.py", line 976, in send
+    self.connect()
+  File "C:\Program Files\Python311\Lib\http\client.py", line 1448, in connect
+    super().connect()
+  File "C:\Program Files\Python311\Lib\http\client.py", line 942, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\socket.py", line 827, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\main.py", line 9, in <module>
+    data_ingestion.main()
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\pipeline\stage_01_data_ingestion.py", line 17, in main
+    raise e
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\pipeline\stage_01_data_ingestion.py", line 14, in main
+    data_ingestion.download_file()
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\conponents\data_ingestion.py", line 15, in download_file
+    filename, headers = request.urlretrieve(
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 241, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+                            ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\urllib\request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+[2024-12-01 18:33:17,938: INFO: main: >>>>>>> stage Data Ingestion Stage started]
+[2024-12-01 18:33:17,938: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 18:33:17,938: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 18:33:17,938: INFO: common: created directory at: artifacts]
+[2024-12-01 18:33:17,938: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 18:33:25,578: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 50DA:17E322:F8202:14AAD1:674C56C0
+Accept-Ranges: bytes
+Date: Sun, 01 Dec 2024 13:03:18 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21729-DEL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1733058198.316691,VS0,VE312
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 6e20b4fb8d05dedb80be09184a65836d787178bf
+Expires: Sun, 01 Dec 2024 13:08:18 GMT
+Source-Age: 0
+
+]
+[2024-12-01 18:33:25,971: INFO: main: >>>>> stage Data Ingestion Stage completed successfully <<<<<<<<\m
+x============x]
+[2024-12-01 19:04:35,861: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:04:35,887: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:04:35,890: INFO: common: created directory at: artifacts]
+[2024-12-01 19:04:35,896: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-01 19:06:50,433: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:06:50,437: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:06:50,440: INFO: common: created directory at: artifacts]
+[2024-12-01 19:06:50,443: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-01 19:08:06,412: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:08:06,424: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:08:06,431: INFO: common: created directory at: artifacts]
+[2024-12-01 19:08:06,436: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-01 19:23:48,950: INFO: main: >>>>>>> stage Data Ingestion Stage started]
+[2024-12-01 19:23:48,950: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:23:48,950: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:23:48,966: INFO: common: created directory at: artifacts]
+[2024-12-01 19:23:48,966: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 19:23:52,850: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 50DA:17E322:F8202:14AAD1:674C56C0
+Accept-Ranges: bytes
+Date: Sun, 01 Dec 2024 13:53:49 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21741-DEL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1733061229.141376,VS0,VE266
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: febcfc1543ceae54323fbbd9f99a89326bf06327
+Expires: Sun, 01 Dec 2024 13:58:49 GMT
+Source-Age: 0
+
+]
+[2024-12-01 19:23:53,149: INFO: main: >>>>> stage Data Ingestion Stage completed successfully <<<<<<<<\m
+x============x]
+[2024-12-01 19:23:53,149: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2024-12-01 19:23:53,149: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:23:53,149: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:23:53,149: INFO: common: created directory at: artifacts]
+[2024-12-01 19:23:53,164: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 19:23:53,167: ERROR: main: 'DataValidation' object has no attribute 'download_file']
+Traceback (most recent call last):
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\main.py", line 22, in <module>
+    data_validation.main()
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\pipeline\stage_02_data_validation.py", line 17, in main
+    raise e
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.download_file()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataValidation' object has no attribute 'download_file'
+[2024-12-01 19:26:04,917: INFO: main: >>>>>>> stage Data Ingestion Stage started]
+[2024-12-01 19:26:04,917: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:26:04,933: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:26:04,933: INFO: common: created directory at: artifacts]
+[2024-12-01 19:26:04,933: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 19:26:11,552: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 50DA:17E322:F8202:14AAD1:674C56C0
+Accept-Ranges: bytes
+Date: Sun, 01 Dec 2024 13:56:05 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21739-DEL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1733061365.028719,VS0,VE9
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 1127120b8102b9a2b98f47692a1b4a7b1c597899
+Expires: Sun, 01 Dec 2024 14:01:05 GMT
+Source-Age: 136
+
+]
+[2024-12-01 19:26:11,825: INFO: main: >>>>> stage Data Ingestion Stage completed successfully <<<<<<<<\m
+x============x]
+[2024-12-01 19:26:11,825: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2024-12-01 19:26:11,825: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:26:11,825: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:26:11,825: INFO: common: created directory at: artifacts]
+[2024-12-01 19:26:11,825: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-01 19:26:11,834: ERROR: main: 'DataValidation' object has no attribute 'download_file']
+Traceback (most recent call last):
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\main.py", line 22, in <module>
+    data_validation.main()
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\pipeline\stage_02_data_validation.py", line 17, in main
+    raise e
+  File "C:\Users\Priya\OneDrive\Desktop\MProject\python\summarizer\src\textSummarizer\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation.download_file()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataValidation' object has no attribute 'download_file'
+[2024-12-01 19:29:36,554: INFO: main: >>>>>>> stage Data Ingestion Stage started]
+[2024-12-01 19:29:36,554: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:29:36,565: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:29:36,565: INFO: common: created directory at: artifacts]
+[2024-12-01 19:29:36,565: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 19:29:41,252: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 50DA:17E322:F8202:14AAD1:674C56C0
+Accept-Ranges: bytes
+Date: Sun, 01 Dec 2024 13:59:36 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21734-DEL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1733061577.625311,VS0,VE270
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: c516ed8564e1a3aef453f16dce9e01f235cfbcd3
+Expires: Sun, 01 Dec 2024 14:04:36 GMT
+Source-Age: 0
+
+]
+[2024-12-01 19:29:41,613: INFO: main: >>>>> stage Data Ingestion Stage completed successfully <<<<<<<<\m
+x============x]
+[2024-12-01 19:29:41,613: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2024-12-01 19:29:41,629: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:29:41,629: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:29:41,629: INFO: common: created directory at: artifacts]
+[2024-12-01 19:29:41,634: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-01 19:29:41,645: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2024-12-01 19:37:32,268: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-01 19:44:12,515: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:44:12,524: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:44:12,536: INFO: common: created directory at: artifacts]
+[2024-12-01 19:44:12,539: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-01 19:46:13,354: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:46:13,359: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:46:13,369: INFO: common: created directory at: artifacts]
+[2024-12-01 19:46:13,374: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-01 19:47:33,042: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:47:33,048: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:47:33,052: INFO: common: created directory at: artifacts]
+[2024-12-01 19:47:33,056: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-01 19:49:45,328: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:49:45,355: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:49:45,360: INFO: common: created directory at: artifacts]
+[2024-12-01 19:49:45,364: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-01 19:56:18,458: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-01 19:56:19,471: INFO: main: >>>>>>> stage Data Ingestion Stage started]
+[2024-12-01 19:56:19,471: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:56:19,471: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:56:19,485: INFO: common: created directory at: artifacts]
+[2024-12-01 19:56:19,486: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-12-01 19:56:31,635: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 7903594
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "dbc016a060da18070593b83afff580c9b300f0b6ea4147a7988433e04df246ca"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: 50DA:17E322:F8202:14AAD1:674C56C0
+Accept-Ranges: bytes
+Date: Sun, 01 Dec 2024 14:26:19 GMT
+Via: 1.1 varnish
+X-Served-By: cache-del21736-DEL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1733063180.586269,VS0,VE273
+Vary: Authorization,Accept-Encoding,Origin
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: 0f8d354cdfba6d79fb9148237be0bf1df0fdbbee
+Expires: Sun, 01 Dec 2024 14:31:19 GMT
+Source-Age: 0
+
+]
+[2024-12-01 19:56:31,895: INFO: main: >>>>> stage Data Ingestion Stage completed successfully <<<<<<<<\m
+x============x]
+[2024-12-01 19:56:31,895: INFO: main: >>>>>> stage Data Validation Stage started <<<<<<]
+[2024-12-01 19:56:31,911: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:56:31,911: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:56:31,913: INFO: common: created directory at: artifacts]
+[2024-12-01 19:56:31,915: INFO: common: created directory at: artifacts/data_validation]
+[2024-12-01 19:56:31,921: INFO: main: >>>>>> stage Data Validation Stage completed <<<<<<
+
+x==========x]
+[2024-12-01 19:56:31,922: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-12-01 19:56:31,925: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 19:56:31,925: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 19:56:31,929: INFO: common: created directory at: artifacts]
+[2024-12-01 19:56:31,932: INFO: common: created directory at: artifacts/data_transformation]
+[2024-12-01 19:56:40,410: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-12-01 22:19:44,242: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 22:19:44,276: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 22:19:44,284: INFO: common: created directory at: artifacts]
+[2024-12-01 22:21:44,907: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 22:21:44,923: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 22:21:44,940: INFO: common: created directory at: artifacts]
+[2024-12-01 22:25:16,861: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 22:25:16,900: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 22:25:16,909: INFO: common: created directory at: artifacts]
+[2024-12-01 22:31:20,740: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-01 22:31:45,615: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 22:31:45,620: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 22:31:45,625: INFO: common: created directory at: artifacts]
+[2024-12-01 22:56:53,633: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 22:56:53,738: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 22:56:53,746: INFO: common: created directory at: artifacts]
+[2024-12-01 22:56:53,746: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-01 23:00:52,068: WARNING: file_download: Error while downloading from https://cdn-lfs.hf.co/google/pegasus-cnn_dailymail/cf34e28157605d3ced3bd184820ea2a9d9a30b69f4bb1df4aaa4145d0850290e?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27pytorch_model.bin%3B+filename%3D%22pytorch_model.bin%22%3B&response-content-type=application%2Foctet-stream&Expires=1733333221&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTczMzMzMzIyMX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy5oZi5jby9nb29nbGUvcGVnYXN1cy1jbm5fZGFpbHltYWlsL2NmMzRlMjgxNTc2MDVkM2NlZDNiZDE4NDgyMGVhMmE5ZDlhMzBiNjlmNGJiMWRmNGFhYTQxNDVkMDg1MDI5MGU%7EcmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj0qJnJlc3BvbnNlLWNvbnRlbnQtdHlwZT0qIn1dfQ__&Signature=eqbuNXwO0O2qeDRmo8PiSL%7E9jwikO8qQXqtSdPSo7vT6GoqgOGtW-fNBQH6ei8yw-TYDjk26k3DNfojH9W5kh7B9jq63TqhZZmNOG-6PtfOaTsybZ4C4T7sAwV5dFCG8jOv94qsdZw819wOPJNZLD-SFKSQsPb2J6fnG01iHCq9jppDf6uuiF4W3bNuopCapjjG3YLS139dAGc3WnP9v2pPZ-pzEAo5pKtvdKkAT5IawSHUxrt73%7ElHkUpmcvwvhw9LEGXPmq7%7EucX00RypH4%7EM8mL12QOSMS7tfxoWG%7EcFNQQIB2tyIKnM49EzFcTys6Bm%7E9neDS16J4pgcAyCOug__&Key-Pair-Id=K3RPWS32NSSJCE: HTTPSConnectionPool(host='cdn-lfs.hf.co', port=443): Read timed out.
+Trying to resume download...]
+[2024-12-01 23:04:01,994: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-01 23:04:02,026: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-01 23:04:02,033: INFO: common: created directory at: artifacts]
+[2024-12-01 23:04:02,033: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-02 09:52:30,719: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-02 09:52:32,998: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-02 09:52:33,020: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-02 09:52:33,023: INFO: common: created directory at: artifacts]
+[2024-12-02 09:52:33,026: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-02 09:54:50,413: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-02 09:54:50,428: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-02 09:54:50,428: INFO: common: created directory at: artifacts]
+[2024-12-02 09:54:50,438: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-02 09:58:20,992: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-02 09:58:22,004: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-02 09:58:22,006: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-02 09:58:22,012: INFO: common: created directory at: artifacts]
+[2024-12-02 09:58:22,014: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-02 10:05:17,898: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-02 10:05:21,000: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-02 10:05:21,038: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-02 10:05:21,038: INFO: common: created directory at: artifacts]
+[2024-12-02 10:05:21,047: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-02 10:18:08,793: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-02 10:18:08,868: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-02 10:18:08,886: INFO: common: created directory at: artifacts]
+[2024-12-02 10:18:08,898: INFO: common: created directory at: artifacts/model_trainer]
+[2024-12-02 10:22:49,545: INFO: config: PyTorch version 2.5.1 available.]
+[2024-12-02 10:22:52,202: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-02 10:22:52,212: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-02 10:22:52,218: INFO: common: created directory at: artifacts]
+[2024-12-02 10:22:52,218: INFO: common: created directory at: artifacts/model_trainer]
